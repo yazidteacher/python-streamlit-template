@@ -653,58 +653,76 @@
         </div>
       </section>
 
-      <!-- SLIDE 5: IF - ELSE LOGIC -->
+      <!-- SLIDE 5: SMART IF - ELIF - ELSE LOGIC -->
       <section class="slide" id="slide-5">
-        <div class="slide-tag tag-concept">🔀 Konsep 3: If - Else</div>
-        <h1 class="slide-title">If - Else: Mengambil Keputusan</h1>
-        <p class="slide-desc">Komputer memeriksa kondisi: <i>Jika bernilai True, jalankan aksi A. Jika bernilai False, jalankan aksi B!</i></p>
+        <div class="slide-tag tag-concept">🔀 Konsep 3: Logika Bertingkat (If - Elif - Else)</div>
+        <h1 class="slide-title">If - Elif - Else: Otak Cerdas Asisten Tugas 🧠</h1>
+        <p class="slide-desc">Bagaimana cara komputer tahu tugas mana yang <b>BAHAYA</b> dan mana yang <b>SANTAI</b>? Kita gunakan <code>if</code>, <code>elif</code>, dan operator <code>and</code>!</p>
 
         <div class="grid-2">
-          <div class="code-box">
-            sudah_selesai = <span class="bool">True</span><br><br>
+          <div class="code-box" style="font-size: 0.85rem; line-height: 1.5;">
             <span class="kw">if</span> sudah_selesai:<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(<span class="str">"🎉 Hore! Tugas sudah selesai!"</span>)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;st.<span class="fn">success</span>(<span class="str">"🎉 SELESAI!"</span>)<br>
             <span class="kw">else</span>:<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">print</span>(<span class="str">"⏳ Semangat, kerjakan tugasmu!"</span>)
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="cm"># 1. Bahaya: Deadline hari ini & prioritas tinggi</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">if</span> sisa_hari == 0 <span class="kw">and</span> prioritas == <span class="str">"Tinggi"</span>:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;st.<span class="fn">error</span>(<span class="str">"🚨 BAHAYA MAKSIMAL! Matikan game!"</span>)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="cm"># 2. Darurat: Sisa 1-2 hari</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">elif</span> sisa_hari &lt;= 2 <span class="kw">and</span> prioritas == <span class="str">"Tinggi"</span>:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;st.<span class="fn">warning</span>(<span class="str">"⚡ DARURAT: Cicil sekarang!"</span>)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="cm"># 3. Santai: Masih ada waktu</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">else</span>:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;st.<span class="fn">info</span>(<span class="str">"🌱 Masih aman, kerjakan santai."</span>)
           </div>
 
           <div class="interactive-card">
-            <h4 style="color: var(--accent-secondary); margin-bottom: 0.5rem;">2 Aturan Emas Python:</h4>
+            <h4 style="color: var(--accent-secondary); margin-bottom: 0.5rem;">Mengapa Butuh Logika Ini?</h4>
             <div style="margin-bottom: 0.75rem;">
-              <b>1. Titik Dua (<code>:</code>)</b><br>
-              <span style="font-size: 0.85rem; color: var(--text-muted);">Wajib ada di akhir baris <code>if</code> dan <code>else</code> sebagai penanda pintu masuk.</span>
+              <b>1. Operator <code>and</code> (Dua Syarat Sekaligus)</b><br>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Komputer hanya membunyikan alarm jika <b>kedua syarat benar</b>: waktunya mepet (0 hari) <b>DAN</b> tugasnya penting!</span>
             </div>
             <div>
-              <b>2. Indentasi (Tab / 4 Spasi)</b><br>
-              <span style="font-size: 0.85rem; color: var(--text-muted);">Baris perintah di dalam <code>if</code> atau <code>else</code> wajib digeser masuk ke kanan!</span>
+              <b>2. <code>elif</code> (Kondisi Cadangan)</b><br>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Jika kondisi pertama belum terpenuhi, komputer mengecek opsi berikutnya secara cerdas.</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SLIDE 6: SIMULATOR -->
+      <!-- SLIDE 6: ADVANCED SIMULATOR -->
       <section class="slide" id="slide-6">
         <div class="slide-tag tag-concept">⚡ Live Simulator</div>
-        <h1 class="slide-title">Uji Langsung: Simulator If - Else Interaktif</h1>
-        <p class="slide-desc">Ketik nama tugas di kotak teks dan geser saklar centang untuk melihat komputer bereaksi seketika:</p>
+        <h1 class="slide-title">Uji Langsung: Otak Asisten Pintar di Layar</h1>
+        <p class="slide-desc">Ubah prioritas dan sisa hari untuk melihat bagaimana logika <code>if-elif-else</code> bereaksi seketika:</p>
 
         <div class="interactive-playground">
-          <div class="playground-title">⚡ Live Simulator: Uji Logika If-Else</div>
+          <div class="playground-title">⚡ Live Simulator: Uji Keputusan If-Elif-Else</div>
           
-          <div class="input-group">
-            <input type="text" id="simTaskInput" value="Mengerjakan PR Matematika" placeholder="Ketik nama tugas...">
+          <div style="display: grid; grid-template-columns: 2fr 1.2fr 1fr; gap: 0.75rem; margin-bottom: 0.75rem;">
+            <input type="text" id="simTaskInput" value="PR Matematika Aljabar" placeholder="Nama tugas...">
+            <select id="simPrioritySelect" style="background: rgba(15, 23, 42, 0.8); border: 1px solid var(--card-border); color: #fff; padding: 0.65rem; border-radius: 10px; font-family: var(--font-sans); outline: none;">
+              <option value="Tinggi">Prioritas Tinggi 🔴</option>
+              <option value="Sedang">Prioritas Sedang 🟡</option>
+              <option value="Rendah">Prioritas Rendah 🟢</option>
+            </select>
+            <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--card-border); padding: 0.4rem 0.75rem; border-radius: 10px;">
+              <span style="font-size: 0.8rem; color: var(--text-dim);">Hari:</span>
+              <input type="range" id="simDaysRange" min="0" max="7" value="0" style="width: 100%; cursor: pointer;">
+              <span id="simDaysVal" style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; color: var(--accent-secondary);">0</span>
+            </div>
           </div>
 
           <div class="custom-switch" id="simSwitch" onclick="toggleSimSwitch()">
             <div class="switch-ui"><div class="switch-handle"></div></div>
-            <span id="simSwitchLabel">Status: BELUM SELESAI (is_completed = False)</span>
+            <span id="simSwitchLabel">Status: <b>BELUM SELESAI (sudah_selesai = False)</b></span>
           </div>
 
-          <div id="simResultBanner" class="result-banner banner-warning">
-            ⏳ [ELSE] Tugas 'Mengerjakan PR Matematika' belum selesai. Ayo kerjakan sekarang!
+          <div id="simResultBanner" class="result-banner banner-warning" style="background: rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.3); color: #f87171;">
+            🚨 [IF sisa_hari == 0 and prioritas == 'Tinggi'] BAHAYA MAKSIMAL! Tugas 'PR Matematika Aljabar' deadlinenya HARI INI! Matikan game, kerjakan sekarang!
           </div>
         </div>
       </section>
+
 
       <!-- SLIDE 7: STEP BY STEP WRITE CODE IN CODESPACES -->
       <section class="slide" id="slide-7">
@@ -924,38 +942,74 @@
       }
     });
 
-    // Interactive Switch Simulator for Slide 6
+    // Interactive Smart Advisor Simulator for Slide 6
     let isCompletedSim = false;
-    function toggleSimSwitch() {
-      isCompletedSim = !isCompletedSim;
+
+    function updateSmartSimulator() {
       const switchEl = document.getElementById('simSwitch');
       const labelEl = document.getElementById('simSwitchLabel');
       const bannerEl = document.getElementById('simResultBanner');
-      const taskVal = document.getElementById('simTaskInput').value.trim() || 'Tugas Saya';
+      const taskVal = document.getElementById('simTaskInput')?.value.trim() || 'Tugas Saya';
+      const priorityVal = document.getElementById('simPrioritySelect')?.value || 'Tinggi';
+      const daysVal = parseInt(document.getElementById('simDaysRange')?.value || '0', 10);
+      const daysValEl = document.getElementById('simDaysVal');
+      if (daysValEl) daysValEl.innerText = daysVal;
 
       if (isCompletedSim) {
         switchEl.classList.add('switch-active');
-        labelEl.innerHTML = `Status: <b>SUDAH SELESAI (is_completed = True)</b>`;
+        labelEl.innerHTML = `Status: <b>SUDAH SELESAI (sudah_selesai = True)</b>`;
         bannerEl.className = 'result-banner banner-success';
-        bannerEl.innerHTML = `🎉 [IF] Hebat! Tugas '${taskVal}' sudah SELESAI! Dikerjakan tepat waktu!`;
+        bannerEl.style.background = 'rgba(16, 185, 129, 0.15)';
+        bannerEl.style.borderColor = 'rgba(16, 185, 129, 0.3)';
+        bannerEl.style.color = '#34d399';
+        bannerEl.innerHTML = `🎉 [IF sudah_selesai] Hebat! Tugas '${taskVal}' berhasil diselesaikan tepat waktu! (+100 XP)`;
       } else {
         switchEl.classList.remove('switch-active');
-        labelEl.innerHTML = `Status: <b>BELUM SELESAI (is_completed = False)</b>`;
-        bannerEl.className = 'result-banner banner-warning';
-        bannerEl.innerHTML = `⏳ [ELSE] Tugas '${taskVal}' belum selesai. Ayo kerjakan sekarang!`;
+        labelEl.innerHTML = `Status: <b>BELUM SELESAI (sudah_selesai = False)</b>`;
+
+        if (daysVal === 0 && priorityVal === 'Tinggi') {
+          bannerEl.className = 'result-banner';
+          bannerEl.style.background = 'rgba(239, 68, 68, 0.2)';
+          bannerEl.style.borderColor = 'rgba(239, 68, 68, 0.4)';
+          bannerEl.style.color = '#f87171';
+          bannerEl.innerHTML = `🚨 [IF sisa_hari == 0 and prioritas == 'Tinggi'] BAHAYA MAKSIMAL! '${taskVal}' deadline HARI INI! Matikan game, kerjakan sekarang! 🔥`;
+        } else if (daysVal === 0) {
+          bannerEl.className = 'result-banner banner-warning';
+          bannerEl.style.background = 'rgba(245, 158, 11, 0.2)';
+          bannerEl.style.borderColor = 'rgba(245, 158, 11, 0.4)';
+          bannerEl.style.color = '#fbbf24';
+          bannerEl.innerHTML = `⚠️ [ELIF sisa_hari == 0] HARI INI TERAKHIR! '${taskVal}' harus dikumpulkan hari ini sebelum malam!`;
+        } else if (daysVal <= 2 && priorityVal === 'Tinggi') {
+          bannerEl.className = 'result-banner banner-warning';
+          bannerEl.style.background = 'rgba(245, 158, 11, 0.15)';
+          bannerEl.style.borderColor = 'rgba(245, 158, 11, 0.3)';
+          bannerEl.style.color = '#fbbf24';
+          bannerEl.innerHTML = `⚡ [ELIF sisa_hari <= 2 and prioritas == 'Tinggi'] DARURAT: Sisa ${daysVal} hari & prioritas tinggi. Cicil 30 menit sekarang!`;
+        } else if (priorityVal === 'Sedang') {
+          bannerEl.className = 'result-banner';
+          bannerEl.style.background = 'rgba(6, 182, 212, 0.15)';
+          bannerEl.style.borderColor = 'rgba(6, 182, 212, 0.3)';
+          bannerEl.style.color = '#22d3ee';
+          bannerEl.innerHTML = `📌 [ELIF prioritas == 'Sedang'] TERJADWAL: Masih ada ${daysVal} hari untuk '${taskVal}'. Kerjakan santai hari ini.`;
+        } else {
+          bannerEl.className = 'result-banner banner-success';
+          bannerEl.style.background = 'rgba(16, 185, 129, 0.12)';
+          bannerEl.style.borderColor = 'rgba(16, 185, 129, 0.25)';
+          bannerEl.style.color = '#34d399';
+          bannerEl.innerHTML = `🌱 [ELSE] SANTAI: '${taskVal}' prioritas rendah dan sisa ${daysVal} hari. Bisa dikerjakan nanti.`;
+        }
       }
     }
 
-    document.getElementById('simTaskInput')?.addEventListener('input', () => {
-      if (isCompletedSim) {
-        toggleSimSwitch();
-        toggleSimSwitch();
-      } else {
-        const bannerEl = document.getElementById('simResultBanner');
-        const taskVal = document.getElementById('simTaskInput').value.trim() || 'Tugas Saya';
-        bannerEl.innerHTML = `⏳ [ELSE] Tugas '${taskVal}' belum selesai. Ayo kerjakan sekarang!`;
-      }
-    });
+    function toggleSimSwitch() {
+      isCompletedSim = !isCompletedSim;
+      updateSmartSimulator();
+    }
+
+    document.getElementById('simTaskInput')?.addEventListener('input', updateSmartSimulator);
+    document.getElementById('simPrioritySelect')?.addEventListener('change', updateSmartSimulator);
+    document.getElementById('simDaysRange')?.addEventListener('input', updateSmartSimulator);
+
 
     // 60-Minute Countdown Timer
     let timeLeft = 60 * 60;
