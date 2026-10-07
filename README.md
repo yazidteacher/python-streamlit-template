@@ -1,37 +1,18 @@
-# 📋 Python Streamlit Personal To-Do List Template
+# 📋 Python Streamlit Student Workspace Template
 
-Repository template untuk pembelajaran pemrograman Python dan pembuatan web app interaktif menggunakan **Streamlit** di **GitHub Codespaces**.
-
-Dirancang khusus untuk siswa SMP pemula (usia 12–15 tahun) yang baru belajar `print()`, Variable, Boolean, dan If-Else.
+Starter template resmi untuk pembelajaran pemrograman Python dan pembuatan aplikasi web interaktif di **GitHub Codespaces**.
 
 ---
 
-## 🚀 Cara Menjalankan di GitHub Codespaces
+## 🚀 Cara Mulai Coding:
 
-1. Klik tombol hijau **Use this template** di kanan atas → pilih **Create a new repository**.
-2. Beri nama repositori kamu (misal: `todolist-saya`).
-3. Di repo baru kamu, klik tombol hijau **Code** → pilih tab **Codespaces** → klik **Create codespace on main**.
-4. Tunggu beberapa saat sampai lingkungan Codespaces selesai disiapkan (Python & Streamlit terpasang otomatis).
-5. Di panel **Terminal** di bagian bawah, ketik salah satu perintah berikut:
-
-   **Untuk Latihan Siswa di Kelas:**
+1. Buka file **`app.py`** di panel file sebelah kiri.
+2. Ikuti instruksi guru untuk mengetik kode baris-demi-baris.
+3. Simpan perubahan dengan menekan **Ctrl + S** (atau **Cmd + S** di Mac).
+4. Di panel **Terminal** di bagian bawah, jalankan aplikasi dengan mengetik:
    ```bash
-   streamlit run app_simple.py
+   streamlit run app.py
    ```
+5. Klik tombol pop-up **Open in Browser** pada port `8501`.
 
-   **Untuk Demo Fitur Lengkap:**
-   ```bash
-   streamlit run app_wow.py
-   ```
-
-6. Klik tombol popup **Open in Browser** pada port `8501`. Selamat mencoba! 🎉
-
----
-
-## 📁 Struktur Berkas
-
-- `.devcontainer/devcontainer.json`: Konfigurasi otomatis environment Codespaces & port forwarding `8501`.
-- `requirements.txt`: Dependensi library Streamlit.
-- `app_simple.py`: Kode latihan sederhana (~25 baris) untuk diketik bersama di kelas.
-- `app_wow.py`: Versi demo spektakuler dengan gamifikasi, progress bar, dan efek balon confetti.
-- `app.py`: Versi kartu tugas teranotasi lengkap.
+Selamat coding! 🚀
